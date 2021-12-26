@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import Main from "./Main.jsx"
+import "./App.css"
+import {  Route, Routes } from 'react-router-dom';
+import FirstRouter from './Routers/FirstRouter';
+import SecRouter from './Routers/SecRouter';
+import ThirdRouter from './Routers/ThirdRouter';
+import Navigation from './Navigation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    return (
+        
+            <div className='fullPage'>
+                <header id="mainHeader">Header</header>
+                <Navigation />
+                <Routes>
+                    <Route path="/first" element={<FirstRouter/>} />
+                    <Route path="/second" element={<SecRouter/>} />
+                    <Route path="/third" element={<ThirdRouter/>} />
+                </Routes>
+            </div>
+       
+
+    );
 }
 
 export default App;
